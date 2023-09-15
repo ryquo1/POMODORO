@@ -1,20 +1,32 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pomodoro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POMODORO</title>
+  <link href="./styles/style.css">
 </head>
-<header>
-<h1>Timer Pomodoro</h1>
-</header>
+
+
 <body>
-    <button id="work">Travail</button>
-    <button id="break">Pause</button>
-    <div>
-        <button id="timer"></button>
-    </div>
-<script src="./script/script.js"></script>
+<header>
+<h1>Pomodoro Timer</h1>
+
+</header>
+<div id="container">
+  <div id="choice">
+    <p id="work">Travail</p>
+    <p id="break">Pause</p>
+  </div>
+  <div id="panelTimer">
+    <p id="timer">25:00</p>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+  </div>
+
+</div>
+
+
+  <script src="./script/script.js"></script>
 </body>
-    
 </html>
