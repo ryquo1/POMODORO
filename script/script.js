@@ -1,30 +1,36 @@
 let workDef = document.getElementById("work").textContent
 let breakDef = document.getElementById("break").textContent
-let bSart = document.getElementById("start")
-let bReset = document.getElementById("reset")
+let bSart = document.getElementById("button")
 
 let workTime = 25
 let breakTime = 5
 let seconde = 0
 let stopTime = 0;
 
+let isStart = true;
+
 bSart.addEventListener('click', ()=>{
-    document.getElementById('minute').textContent = workTime;
-    start();
-    
+
+    if(isStart == true){
+        document.getElementById("button").textContent = "reset";
+        document.getElementById('minute').textContent = workTime;
+        start();
+        isStart = false
+    }else{
+        reset();
+        document.getElementById("button").textContent = "start";
+        isStart = true;
+    }  
 })
 
 
-bReset.addEventListener('click',()=>{
-    reset();
-})
 
 function start(){
 
     let workMinute = workTime-1;
     let breakMinute = breakTime -1;
     seconde = 59;
-    let Count = false;
+    let count = false;
     
 
 let timerDecrease = () =>{
@@ -35,12 +41,12 @@ let timerDecrease = () =>{
     if(seconde === 0){
         workMinute--
         if(workMinute === -1){
-            if(!Count){
+            if(!count){
                 workMinute = breakMinute
-                Count = true
+                count = true
     }else{
         workMinute--
-        Count = false
+        count = false
         }
     }
     seconde = 59;
@@ -54,5 +60,5 @@ function reset(){
     clearInterval(stopTime);
     seconde = 0
     document.getElementById('minute').textContent = workTime;
-    document.getElementById('second').textContent = seconde;
+    document.getElementById('second').textContent = seconde +"0";
 }
