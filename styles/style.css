@@ -11,7 +11,7 @@ body{
 }
 
 .container{
-    margin: auto;
+  margin: auto;
   max-width: 1600px;
   width: 80%;
 }
@@ -37,107 +37,102 @@ h1{
 
 .panelTimer {
   flex-direction: column;
-    margin: 3.125rem auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20vw;
-    height: 20vw;
-    border-radius: 50%;
-    border: 0.438rem solid white;
+  margin: 3.125rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+  border: 0.438rem solid white;
+}
+
+#timer {
+  position: relative;
+  display: flex;
+}
+
+#timer p {
+  font-size: 5rem;
+}
+
+#button{
+  border: 0.2rem solid white;
+  background-color: transparent;
+  cursor: pointer;
+  margin: auto;
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  #choice {
+    width: 60%;
   }
+  h1 {
+    font-size: 3rem;
+  }
+  
+  .panelTimer {
+    flex-direction: column;
+    width: 65vw;
+    height: 65vw;
+    border: 0.313rem solid white;
+    }
+
 
   #timer {
     position: relative;
     display: flex;
   }
-
+  
   #timer p {
-    font-size: 5rem;
+    font-size: 4rem;
   }
-
-  #button{
-    border: 0.2rem solid white;
-    background-color: transparent;
-    cursor: pointer;
-    margin: auto;
-    width: 4vw;
-    height: 4vw;
-    border-radius: 50%;
-    color: white;
-    font-size: 2rem;
-  }
-
-
-
-
-  
-  @media screen and (max-width: 1024px) {
-    #choice {
-      width: 60%;
-    }
-    h1 {
-      font-size: 3rem;
-    }
-  
-    .panelTimer {
-      flex-direction: column;
-      width: 65vw;
-      height: 65vw;
-      border: 0.313rem solid white;
-      }
-
-
-    #timer {
-      position: relative;
-      display: flex;
-    }
-  
-    #timer p {
-      font-size: 4rem;
-    }
     
-    #button{
+  #button{
     border: 0.156rem solid white;
     width: 12vw;
     height: 12vw;
     font-size: 1.5rem;
-    }
-
   }
+
+}
   
-  @media screen and (max-width: 768px) {
-    .container,
-    #panel1 {
+@media screen and (max-width: 768px) {
+  .container, #panel1 {
       width: 70%;
     }
   
-    h1 {
-      font-size: 3rem;
-    }
+  h1 {
+    font-size: 3rem;
+  }
   
-    .panelTimer {
-      flex-direction: column;
-      width: 65vw;
-      height: 65vw;
-      border: 0.313rem solid white;
-      }
+  .panelTimer {
+    flex-direction: column;
+    width: 65vw;
+    height: 65vw;
+    border: 0.313rem solid white;
+  }
 
 
-    #timer {
-      position: relative;
-      display: flex;
-    }
+  #timer {
+    position: relative;
+    display: flex;
+  }
   
-    #timer p {
-      font-size: 4rem;
-    }
+  #timer p {
+    font-size: 4rem;
+  }
     
-    #button{
+  #button{
     border: 0.156rem solid white;
     width: 12vw;
     height: 12vw;
     font-size: 1.5rem;
-    }
   }
+}
 
