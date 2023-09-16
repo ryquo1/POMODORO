@@ -2,3 +2,74 @@
     padding: 0;
     margin: 0;
 }
+
+body{
+    text-align: center;
+    font-size: 1.55rem;
+    font-family: 'Kanit', sans-serif;
+    background-color: #1b373d;
+}
+
+.container{
+    margin: auto;
+  max-width: 1600px;
+  width: 80%;
+}
+
+h1,p{
+    color: white;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+#choice{
+    margin: 3.125rem auto;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    width: 25%;
+    padding: 1.563rem;
+    border: solid white;
+    border-radius: 25px;
+}
+
+.panelTimer {
+    margin: 3.125rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 31.25rem;
+    height: 31.25rem;
+    border-radius: 50%;
+    border: 0.438rem solid white;
+  }
+
+  #timer {
+    position: relative;
+    display: flex;
+    left: 12%;
+  }
+
+  #timer p {
+    font-size: 8rem;
+  }
+
+#but{
+    position: relative;
+    top: 30%;
+    right: 32%;
+}
+
+  #button{
+    border: 0.313rem solid white;
+    background-color: transparent;
+    cursor: pointer;
+    margin: auto;
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+    color: white;
+    font-size: 3rem;
+  }

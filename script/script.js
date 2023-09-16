@@ -12,13 +12,13 @@ let isStart = true;
 bSart.addEventListener('click', ()=>{
 
     if(isStart == true){
-        document.getElementById("button").textContent = "reset";
+        document.getElementById("button").innerHTML = '<em class="fa-solid fa-arrow-rotate-left"></em>';
         document.getElementById('minute').textContent = workTime;
         start();
         isStart = false
     }else{
         reset();
-        document.getElementById("button").textContent = "start";
+        document.getElementById("button").innerHTML = '<em class="fa-solid fa-play"></em>';
         isStart = true;
     }  
 })
