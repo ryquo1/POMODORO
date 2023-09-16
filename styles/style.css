@@ -29,19 +29,20 @@ h1{
     display: flex;
     justify-content: space-around;
     align-self: center;
-    width: 25%;
+    width: 20%;
     padding: 1.563rem;
     border: solid white;
     border-radius: 25px;
 }
 
 .panelTimer {
+  flex-direction: column;
     margin: 3.125rem auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 31.25rem;
-    height: 31.25rem;
+    width: 20vw;
+    height: 20vw;
     border-radius: 50%;
     border: 0.438rem solid white;
   }
@@ -49,27 +50,94 @@ h1{
   #timer {
     position: relative;
     display: flex;
-    left: 12%;
   }
 
   #timer p {
-    font-size: 8rem;
+    font-size: 5rem;
   }
 
-#but{
-    position: relative;
-    top: 30%;
-    right: 32%;
-}
-
   #button{
-    border: 0.313rem solid white;
+    border: 0.2rem solid white;
     background-color: transparent;
     cursor: pointer;
     margin: auto;
-    width: 6.25rem;
-    height: 6.25rem;
+    width: 4vw;
+    height: 4vw;
     border-radius: 50%;
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
   }
+
+
+
+
+  
+  @media screen and (max-width: 1024px) {
+    #choice {
+      width: 60%;
+    }
+    h1 {
+      font-size: 3rem;
+    }
+  
+    .panelTimer {
+      flex-direction: column;
+      width: 65vw;
+      height: 65vw;
+      border: 0.313rem solid white;
+      }
+
+
+    #timer {
+      position: relative;
+      display: flex;
+    }
+  
+    #timer p {
+      font-size: 4rem;
+    }
+    
+    #button{
+    border: 0.156rem solid white;
+    width: 12vw;
+    height: 12vw;
+    font-size: 1.5rem;
+    }
+
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container,
+    #panel1 {
+      width: 70%;
+    }
+  
+    h1 {
+      font-size: 3rem;
+    }
+  
+    .panelTimer {
+      flex-direction: column;
+      width: 65vw;
+      height: 65vw;
+      border: 0.313rem solid white;
+      }
+
+
+    #timer {
+      position: relative;
+      display: flex;
+    }
+  
+    #timer p {
+      font-size: 4rem;
+    }
+    
+    #button{
+    border: 0.156rem solid white;
+    width: 12vw;
+    height: 12vw;
+    font-size: 1.5rem;
+    }
+  }
+
