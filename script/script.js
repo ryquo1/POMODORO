@@ -27,6 +27,9 @@ bSart.addEventListener('click', ()=>{
 
 function start(){
 
+    document.getElementById('work').style.display ='block'
+    document.getElementById('break').style.display ='none'
+
     let workMinute = workTime-1;
     let breakMinute = breakTime -1;
     seconde = 59;
@@ -42,6 +45,8 @@ let timerDecrease = () =>{
         workMinute--
         if(workMinute === -1){
             if(!count){
+                document.getElementById('work').style.display = 'none'
+                document.getElementById('break').style.display = 'block'
                 workMinute = breakMinute
                 count = true
     }else{
@@ -61,4 +66,6 @@ function reset(){
     seconde = 0
     document.getElementById('minute').textContent = workTime;
     document.getElementById('second').textContent = seconde +"0";
+    document.getElementById('work').style.display = 'block'
+    document.getElementById('break').style.display = 'block'
 }
