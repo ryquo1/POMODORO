@@ -1,5 +1,5 @@
 //variable declaration
-let workTime = 25,
+let workTime = 1,
     breakTime = 5,
     workMinute,
     breakMinute,
@@ -8,6 +8,7 @@ let workTime = 25,
     isStart = true,
     count;
 
+var audio = new Audio('./audio/Alarm.mp3');
 
 let workDef = document.getElementById("work").textContent,
     breakDef = document.getElementById("break").textContent,
@@ -51,6 +52,7 @@ const timerDecrease = () =>{
         workMinute--;
         if(workMinute === -1){
             if(!count){
+                audio.play();
                 document.getElementById('work').style.display = 'none';
                 document.getElementById('break').style.display = 'block';
                 workMinute = breakMinute;
