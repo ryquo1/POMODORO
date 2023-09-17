@@ -68,6 +68,15 @@ h1{
   font-size: 2rem;
 }
 
+#numberWork,#numberBreak{
+  font-size: 1rem;
+  width: 50px;
+  height: 25px;
+  top: 50%;
+  bottom: 50%;
+}
+
+
 @media screen and (max-width: 1024px) {
   #choice {
     width: 60%;
@@ -98,6 +107,16 @@ h1{
     width: 12vw;
     height: 12vw;
     font-size: 1.5rem;
+  }
+
+p{
+  font-size: 1rem;
+}
+
+  #numberWork,#numberBreak{
+    font-size: 1rem;
+    width: 20%;
+    margin: auto;
   }
 
 }
@@ -134,5 +153,16 @@ h1{
     height: 12vw;
     font-size: 1.5rem;
   }
+
+  #button{
+    border: 0.156rem solid white;
+    width: 12vw;
+    height: 12vw;
+    font-size: 1.5rem;
+  }
+
+p{
+  font-size: 1rem;
+}
 }
 

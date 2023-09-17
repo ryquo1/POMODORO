@@ -1,12 +1,15 @@
 //variable declaration
-let workTime = 1,
-    breakTime = 5,
-    workMinute,
-    breakMinute,
-    second = 0,
-    stopTime = 0,
-    isStart = true,
-    count;
+let workTime = document.getElementById("numberWork");
+let breakTime = document.getElementById("numberBreak");
+let workMinute = parseInt(workTime.getAttribute("value"));
+let breakMinute = parseInt(breakTime.getAttribute("value"));
+
+
+
+let second = 0;
+let stopTime = 0;
+let isStart = true;
+let count;
 
 var audio = new Audio('./audio/Alarm.mp3');
 
@@ -17,10 +20,9 @@ let workDef = document.getElementById("work").textContent,
 
 //a listener in the button start
 buttonSart.addEventListener('click', ()=>{
-
     if(isStart == true){
         document.getElementById("button").innerHTML = '<em class="fa-solid fa-arrow-rotate-left"></em>';
-        document.getElementById('minute').textContent = workTime;
+        document.getElementById('minute').textContent = workTime.value;
         start();
         isStart = false;
     }else{
@@ -37,8 +39,10 @@ function start(){
     document.getElementById('work').style.display ='block';
     document.getElementById('break').style.display ='none';
 
-    workMinute = workTime-1;
-    breakMinute = breakTime -1;
+    workMinute = workTime.value;
+    workMinute--;
+    breakMinute = breakTime.value;
+    breakMinute--;
     second = 59;
     count = false;
     
@@ -73,7 +77,7 @@ stopTime = setInterval(timerDecrease, 1000);
 function reset(){
     clearInterval(stopTime);
     second = 0;
-    document.getElementById('minute').textContent = workTime;
+    document.getElementById('minute').textContent = workTime.value;
     document.getElementById('second').textContent = second +"0";
     document.getElementById('work').style.display = 'block';
     document.getElementById('break').style.display = 'block';
