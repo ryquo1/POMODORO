@@ -2,7 +2,7 @@ let workDef = document.getElementById("work").textContent
 let breakDef = document.getElementById("break").textContent
 let buttonSart = document.getElementById("button")
 
-let workTime = 1;
+let workTime = 25;
 let breakTime = 5;
 let second = 0;
 let stopTime = 0;
