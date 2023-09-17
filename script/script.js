@@ -1,14 +1,20 @@
-let workDef = document.getElementById("work").textContent
-let breakDef = document.getElementById("break").textContent
-let buttonSart = document.getElementById("button")
+//variable declaration
+let workTime = 25,
+    breakTime = 5,
+    workMinute,
+    breakMinute,
+    second = 0,
+    stopTime = 0,
+    isStart = true,
+    count;
 
-let workTime = 25;
-let breakTime = 5;
-let second = 0;
-let stopTime = 0;
 
-let isStart = true;
+let workDef = document.getElementById("work").textContent,
+    breakDef = document.getElementById("break").textContent,
+    buttonSart = document.getElementById("button");
 
+
+//a listener in the button start
 buttonSart.addEventListener('click', ()=>{
 
     if(isStart == true){
@@ -24,19 +30,19 @@ buttonSart.addEventListener('click', ()=>{
 })
 
 
-
+//function start the timer decrease and update the first time 
 function start(){
 
     document.getElementById('work').style.display ='block';
     document.getElementById('break').style.display ='none';
 
-    let workMinute = workTime-1;
-    let breakMinute = breakTime -1;
+    workMinute = workTime-1;
+    breakMinute = breakTime -1;
     second = 59;
-    let count = false;
+    count = false;
     
-
-let timerDecrease = () =>{
+//function decrease the work and break timer every second
+const timerDecrease = () =>{
     document.getElementById('minute').textContent = workMinute < 10 ? `0${workMinute}` : workMinute;
     document.getElementById('second').textContent = second < 10 ? `0${second}` : second;
     second--;
@@ -61,6 +67,7 @@ let timerDecrease = () =>{
 stopTime = setInterval(timerDecrease, 1000);
 }
 
+//reset the timer and the display and clear the interval
 function reset(){
     clearInterval(stopTime);
     second = 0;
