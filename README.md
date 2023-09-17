@@ -1,21 +1,22 @@
 # Pomodoro Timer App
 
 ## Description
-Ceci est une application de gestion du temps basée sur la technique de gestion du temps Pomodoro. La méthode Pomodoro consiste à travailler en blocs de temps de 25 minutes (appelés "pomodoros") suivis de courtes pauses de 5 minutes. 
-Cette application vous aide à rester concentré et productif en organisant votre temps de travail de cette manière.
+This is a time management application based on the Pomodoro time management technique. The Pomodoro method involves working in time blocks of 25 minutes (called "pomodoros") followed by short 5-minute breaks. 
+This application helps you stay focused and productive by organizing your work time in this manner.
 
-## Fonctionnalités
-- Compteur de Pomodoro : Suivez votre progression en utilisant des pomodoros.
+## Features
+- Pomodoro Counter: Track your progress using pomodoros.
 
-## Utilisation
-1. Clonez ce dépôt sur votre machine locale.
-2. Ouvrez le fichier `index.html` dans votre navigateur web.
-4. Cliquez sur "Démarrer" pour commencer votre première session Pomodoro.
+## Usage
+1. Clone this repository to your local machine.
+2. Open the `index.html` file in your web browser.
+4. Click "Start" to begin your first Pomodoro session.
 
-## Auteurs
+## Authors
 - Delcourt Arthur
-- github : ryquo1
+- GitHub: ryquo1
 
-N'hésitez pas à me contacter si vous avez des questions ou des commentaires.
+Feel free to contact me if you have any questions or comments.
 
 Happy Pomodoro!
+
