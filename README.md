@@ -6,6 +6,7 @@ This application helps you stay focused and productive by organizing your work t
 
 ## Features
 - Pomodoro Counter: Track your progress using pomodoros.
+- pomodoro settings : set your work time and break time
 
 ## Usage
 1. Clone this repository to your local machine.
