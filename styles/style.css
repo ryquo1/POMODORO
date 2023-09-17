@@ -25,7 +25,7 @@ h1{
 }
 
 #choice{
-    margin: 3.125rem auto;
+    margin: 2rem auto;
     display: flex;
     justify-content: space-around;
     align-self: center;

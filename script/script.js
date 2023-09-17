@@ -11,7 +11,7 @@ let stopTime = 0;
 let isStart = true;
 let count;
 
-var audio = new Audio('./audio/Alarm.mp3');
+const audio = new Audio('./audio/Alarm.mp3');
 
 let workDef = document.getElementById("work").textContent,
     breakDef = document.getElementById("break").textContent,
@@ -46,8 +46,12 @@ function start(){
     second = 59;
     count = false;
     
-//function decrease the work and break timer every second
-const timerDecrease = () =>{
+    timerDecrease();
+    stopTime = setInterval(timerDecrease, 1000);
+}
+
+//function decrease the work and switch to break
+function timerDecrease() {
     document.getElementById('minute').textContent = workMinute < 10 ? `0${workMinute}` : workMinute;
     document.getElementById('second').textContent = second < 10 ? `0${second}` : second;
     second--;
@@ -65,13 +69,10 @@ const timerDecrease = () =>{
         workMinute--;
         count = false;
         }
-    }
+        }
     second = 59;
-}
-
+    }
 } 
-stopTime = setInterval(timerDecrease, 1000);
-}
 
 //reset the timer and the display and clear the interval
 function reset(){
