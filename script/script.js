@@ -27,7 +27,7 @@ buttonSound.addEventListener('click', ()=>{
 buttonSart.addEventListener('click', ()=>{
     if(isStart == true){
         document.getElementById("button").innerHTML = '<em class="fa-solid fa-arrow-rotate-left"></em>';
-        document.getElementById("minute").textContent = workTime.value;
+        document.getElementById("minute").textContent = workTime;
         start();
         isStart = false;
     }else{
@@ -43,10 +43,9 @@ function start(){
 
     document.getElementById("work").style.display ='block';
     document.getElementById("break").style.display ='none';
-
-    workMinute = workTime.value;
+    workMinute = workTime;
     workMinute--;
-    breakMinute = breakTime.value;
+    breakMinute = breakTime;
     breakMinute--;
     second = 59;
     count = false;
@@ -80,7 +79,7 @@ function timerDecrease() {
         if(noSound == false){
             audio.play();
         }
-        workMinute = workTime.value;
+        workMinute = workTime;
         count = false;
         workMinute--;
         document.getElementById('work').style.display = 'block';
@@ -95,7 +94,7 @@ function timerDecrease() {
 function reset(){
     clearInterval(stopTime);
     second = 0;
-    document.getElementById('minute').textContent = workTime.value;
+    document.getElementById('minute').textContent = workTime;
     document.getElementById('second').textContent = second +"0";
     document.getElementById('work').style.display = 'block';
     document.getElementById('break').style.display = 'block';
@@ -104,11 +103,9 @@ function reset(){
 document.getElementById("numberWork").addEventListener("change", function () {
     //gestion d'erreurs
     if (this.value > 120) {
-        workTime = 120;
-        this.value = 120
+       this.value = workTime = 120;
     } else if (this.value < 1) {
-        workTime = 1
-        this.value = 1
+       this.value = workTime = 1
     } else {
         workTime = Math.round(this.value);
         this.value = workTime;
@@ -118,15 +115,11 @@ document.getElementById("numberWork").addEventListener("change", function () {
 document.getElementById("numberBreak").addEventListener("change", function () {
     //gestion d'erreurs
     if (this.value > 25) {
-        breakTime = 25;
-        this.value = 25
+        this.value = breakTime = 25;
     } else if (this.value < 1) {
-        breakTime = 1
-        this.value = 1
+       this.value = breakTime = 1
     } else {
         breakTime = Math.round(this.value);
         this.value = breakTime;
     }
-    //enregistrement local
-    localStorage.setItem('TP', breakTime);
 })
