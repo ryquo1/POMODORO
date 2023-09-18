@@ -131,6 +131,18 @@ p{
     margin: auto;
   }
 
+  #sound{
+    border: 0.2rem solid white;
+    background-color: transparent;
+    cursor: pointer;
+    margin: auto;
+    width: 11vw;
+    height: 11vw;
+    border-radius: 12%;
+    color: white;
+    font-size: 2rem;
+  }
+
 }
   
 @media screen and (max-width: 768px) {
@@ -175,6 +187,18 @@ p{
 
 p{
   font-size: 1rem;
+}
+
+#sound{
+  border: 0.2rem solid white;
+  background-color: transparent;
+  cursor: pointer;
+  margin: auto;
+  width: 11vw;
+  height: 11vw;
+  border-radius: 12%;
+  color: white;
+  font-size: 2rem;
 }
 }
 

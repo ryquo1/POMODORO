@@ -3,19 +3,30 @@ let workTime = document.getElementById("numberWork");
 let breakTime = document.getElementById("numberBreak");
 let workMinute = parseInt(workTime.getAttribute("value"));
 let breakMinute = parseInt(breakTime.getAttribute("value"));
-
-
-
 let second = 0;
 let stopTime = 0;
 let isStart = true;
 let count = true;
+let noSound = false;
 
 const audio = new Audio('./audio/Alarm.mp3');
 
 let workDef = document.getElementById("work").textContent,
     breakDef = document.getElementById("break").textContent,
-    buttonSart = document.getElementById("button");
+    buttonSart = document.getElementById("button"),
+    buttonSound = document.getElementById('sound');
+
+
+buttonSound.addEventListener('click', ()=>{
+    if(noSound == false){
+        document.getElementById("sound").innerHTML = '<img src="./image/speaker-slash.svg" alt="slash-speaker"\>';
+        noSound = true;
+    }else{
+        document.getElementById("sound").innerHTML = '<em class="fa-solid fa-volume-high fa-2xs" id="icon"></em>';
+        noSound = false;
+    }
+})
+
 
 
 //a listener in the button start
@@ -63,13 +74,18 @@ function timerDecrease() {
         workMinute--;
         if(workMinute === -1){
             if(count == false){
-                audio.play();
+                if(noSound == false){
+                    audio.play();
+                }
+                
                 workMinute = breakMinute;
                 document.getElementById('work').style.display = 'none';
                 document.getElementById('break').style.display = 'block';
                 count = true;
     }else{
-        audio.play();
+        if(noSound == false){
+            audio.play();
+        }
         workMinute = workTime.value;
         count = false;
         workMinute--;
