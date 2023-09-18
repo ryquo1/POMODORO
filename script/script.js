@@ -10,16 +10,12 @@ let count = true;
 let noSound = false;
 
 const audio = new Audio('./audio/Alarm.mp3');
-
-let workDef = document.getElementById("work").textContent,
-    breakDef = document.getElementById("break").textContent,
-    buttonSart = document.getElementById("button"),
-    buttonSound = document.getElementById('sound');
-
+const buttonSart = document.getElementById("button");
+const buttonSound = document.getElementById("sound");
 
 buttonSound.addEventListener('click', ()=>{
     if(noSound == false){
-        document.getElementById("sound").innerHTML = '<img src="./image/speaker-slash.svg" alt="slash-speaker"\>';
+        document.getElementById("sound").innerHTML = '<img src="./image/speaker-slash.svg" alt="slash-speaker"/>';
         noSound = true;
     }else{
         document.getElementById("sound").innerHTML = '<em class="fa-solid fa-volume-high fa-2xs" id="icon"></em>';
@@ -27,13 +23,11 @@ buttonSound.addEventListener('click', ()=>{
     }
 })
 
-
-
 //a listener in the button start
 buttonSart.addEventListener('click', ()=>{
     if(isStart == true){
         document.getElementById("button").innerHTML = '<em class="fa-solid fa-arrow-rotate-left"></em>';
-        document.getElementById('minute').textContent = workTime.value;
+        document.getElementById("minute").textContent = workTime.value;
         start();
         isStart = false;
     }else{
@@ -47,8 +41,8 @@ buttonSart.addEventListener('click', ()=>{
 //function start the timer decrease and update the first time 
 function start(){
 
-    document.getElementById('work').style.display ='block';
-    document.getElementById('break').style.display ='none';
+    document.getElementById("work").style.display ='block';
+    document.getElementById("break").style.display ='none';
 
     workMinute = workTime.value;
     workMinute--;
@@ -64,8 +58,8 @@ function start(){
 
 //function decrease the work and switch to break
 function timerDecrease() {
-    document.getElementById('minute').textContent = workMinute < 10 ? `0${workMinute}` : workMinute;
-    document.getElementById('second').textContent = second < 10 ? `0${second}` : second;
+    document.getElementById("minute").textContent = workMinute < 10 ? `0${workMinute}` : workMinute;
+    document.getElementById("second").textContent = second < 10 ? `0${second}` : second;
     second--;
 
 
@@ -106,3 +100,33 @@ function reset(){
     document.getElementById('work').style.display = 'block';
     document.getElementById('break').style.display = 'block';
 }
+
+document.getElementById("numberWork").addEventListener("change", function () {
+    //gestion d'erreurs
+    if (this.value > 120) {
+        workTime = 120;
+        this.value = 120
+    } else if (this.value < 1) {
+        workTime = 1
+        this.value = 1
+    } else {
+        workTime = Math.round(this.value);
+        this.value = workTime;
+    }
+})
+
+document.getElementById("numberBreak").addEventListener("change", function () {
+    //gestion d'erreurs
+    if (this.value > 25) {
+        breakTime = 25;
+        this.value = 25
+    } else if (this.value < 1) {
+        breakTime = 1
+        this.value = 1
+    } else {
+        breakTime = Math.round(this.value);
+        this.value = breakTime;
+    }
+    //enregistrement local
+    localStorage.setItem('TP', breakTime);
+})
