@@ -9,7 +9,7 @@ let breakMinute = parseInt(breakTime.getAttribute("value"));
 let second = 0;
 let stopTime = 0;
 let isStart = true;
-let count;
+let count = true;
 
 const audio = new Audio('./audio/Alarm.mp3');
 
@@ -47,6 +47,7 @@ function start(){
     count = false;
     
     timerDecrease();
+    
     stopTime = setInterval(timerDecrease, 1000);
 }
 
@@ -56,18 +57,24 @@ function timerDecrease() {
     document.getElementById('second').textContent = second < 10 ? `0${second}` : second;
     second--;
 
+
+    
     if(second === 0){
         workMinute--;
         if(workMinute === -1){
-            if(!count){
+            if(count == false){
                 audio.play();
+                workMinute = breakMinute;
                 document.getElementById('work').style.display = 'none';
                 document.getElementById('break').style.display = 'block';
-                workMinute = breakMinute;
                 count = true;
     }else{
-        workMinute--;
+        audio.play();
+        workMinute = workTime.value;
         count = false;
+        workMinute--;
+        document.getElementById('work').style.display = 'block';
+        document.getElementById('break').style.display = 'none';
         }
         }
     second = 59;
