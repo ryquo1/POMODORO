@@ -13,6 +13,8 @@ const audio = new Audio('./audio/Alarm.mp3');
 const buttonSart = document.getElementById("button");
 const buttonSound = document.getElementById("sound");
 
+
+//this listener is used to ON/OFF the sound after the end of a cycle
 buttonSound.addEventListener('click', ()=>{
     if(noSound == false){
         document.getElementById("sound").innerHTML = '<img src="./image/speaker-slash.svg" alt="slash-speaker"/>';
@@ -100,6 +102,8 @@ function reset(){
     document.getElementById('break').style.display = 'block';
 }
 
+
+//error handler for input number (worktime)
 document.getElementById("numberWork").addEventListener("change", function () {
     //gestion d'erreurs
     if (this.value > 120) {
@@ -112,6 +116,8 @@ document.getElementById("numberWork").addEventListener("change", function () {
     }
 })
 
+
+//error handler for input number (breakTime)
 document.getElementById("numberBreak").addEventListener("change", function () {
     //gestion d'erreurs
     if (this.value > 25) {
