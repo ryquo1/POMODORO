@@ -1,8 +1,8 @@
 //variable declaration
 let workTime = document.getElementById("numberWork");
 let breakTime = document.getElementById("numberBreak");
-let workMinute = parseInt(workTime.getAttribute("value"));
-let breakMinute = parseInt(breakTime.getAttribute("value"));
+let workMinute ;
+let breakMinute ;
 let second = 0;
 let stopTime = 0;
 let isStart = true;
@@ -29,12 +29,16 @@ buttonSound.addEventListener('click', ()=>{
 buttonSart.addEventListener('click', ()=>{
     if(isStart == true){
         document.getElementById("button").innerHTML = '<em class="fa-solid fa-arrow-rotate-left"></em>';
-        document.getElementById("minute").textContent = workTime;
+        document.getElementById("minute").textContent = workTime.value;
+        document.getElementById("numberWork").disabled = true;
+        document.getElementById("numberBreak").disabled = true;
         start();
         isStart = false;
     }else{
         reset();
         document.getElementById("button").innerHTML = '<em class="fa-solid fa-play"></em>';
+        document.getElementById("numberWork").disabled = false;
+        document.getElementById("numberBreak").disabled = false;
         isStart = true;
     }  
 })
@@ -45,9 +49,9 @@ function start(){
 
     document.getElementById("work").style.display ='block';
     document.getElementById("break").style.display ='none';
-    workMinute = workTime;
+    workMinute = workTime.value;
     workMinute--;
-    breakMinute = breakTime;
+    breakMinute = breakTime.value;
     breakMinute--;
     second = 59;
     count = false;
@@ -81,7 +85,7 @@ function timerDecrease() {
         if(noSound == false){
             audio.play();
         }
-        workMinute = workTime;
+        workMinute = workTime.value;
         count = false;
         workMinute--;
         document.getElementById('work').style.display = 'block';
@@ -96,7 +100,7 @@ function timerDecrease() {
 function reset(){
     clearInterval(stopTime);
     second = 0;
-    document.getElementById('minute').textContent = workTime;
+    document.getElementById('minute').textContent = workTime.value;
     document.getElementById('second').textContent = second +"0";
     document.getElementById('work').style.display = 'block';
     document.getElementById('break').style.display = 'block';
@@ -107,12 +111,12 @@ function reset(){
 document.getElementById("numberWork").addEventListener("change", function () {
     //gestion d'erreurs
     if (this.value > 120) {
-       this.value = workTime = 120;
+       this.value = workMinute = 120;
     } else if (this.value < 1) {
-       this.value = workTime = 1
+       this.value = workMinute = 1
     } else {
-        workTime = Math.round(this.value);
-        this.value = workTime;
+        workMinute = Math.round(this.value);
+        this.value = workMinute;
     }
 })
 
@@ -121,11 +125,11 @@ document.getElementById("numberWork").addEventListener("change", function () {
 document.getElementById("numberBreak").addEventListener("change", function () {
     //gestion d'erreurs
     if (this.value > 25) {
-        this.value = breakTime = 25;
+        this.value = breakMinute = 25;
     } else if (this.value < 1) {
-       this.value = breakTime = 1
+       this.value = breakMinute = 1
     } else {
-        breakTime = Math.round(this.value);
-        this.value = breakTime;
+        breakMinute = Math.round(this.value);
+        this.value = breakMinute;
     }
 })
